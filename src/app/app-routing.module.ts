@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ExchangeComponent } from './exchange/exchange.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: ExchangeComponent }
+   
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

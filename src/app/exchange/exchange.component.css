@@ -1,0 +1,68 @@
+
+
+button{
+  width: 100px;
+  height: 40px;
+}
+
+mat-form-field {
+  width: 200px;
+  height: 100px;
+
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.full-width {
+  margin: 1%;
+  position: sticky;
+  top: 0%;
+}
+
+.btQuote {
+  margin: 1%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+table {
+  margin: 0%;
+}
+
+.messageBox {
+  margin: 1%;
+  color:red;
+  font-weight: bold;
+  align-items: center;
+}
+

@@ -1,0 +1,50 @@
+
+<div>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Informe Data Cotação:</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="dtRequest.value" required>
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button class="btQuote" (click)='getExchange()'>COTAR</button>
+  <button class="btQuote" (click)='clearData()'>LIMPAR</button>
+
+  <div class="messageBox" mat-dialog-content *ngIf="message !== 'data' ">
+    {{ message }}
+  </div>
+
+ <table mat-table [dataSource]="exchangesDS[0]" class="mat-elevation-z8">
+
+  <!-- dateRequest Column -->
+  <ng-container matColumnDef="dateRequest">
+    <th mat-header-cell *matHeaderCellDef> Data Solicitacao </th>
+    <td mat-cell *matCellDef="let element"> {{element.dateRequest}} </td>
+  </ng-container>
+
+  <!-- valueBuy Column -->
+  <ng-container matColumnDef="valueBuy">
+    <th mat-header-cell *matHeaderCellDef> Valor de Compra </th>
+    <td mat-cell *matCellDef="let element"> {{element.valueBuy | currency}} </td>
+  </ng-container>
+
+  <!-- valueSell Column -->
+  <ng-container matColumnDef="valueSell">
+    <th mat-header-cell *matHeaderCellDef> Valor de Venda </th>
+    <td mat-cell *matCellDef="let element"> {{element.valueSell | currency}} </td>
+  </ng-container>
+
+  <!-- dateExchange Column -->
+  <ng-container matColumnDef="dateExchange">
+    <th mat-header-cell *matHeaderCellDef> Data Cotacao </th>
+    <td mat-cell *matCellDef="let element"> {{element.dateExchange | date:"dd/MM/yyyy HH:mm"}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+</div>
